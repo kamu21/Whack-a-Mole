@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>モグラたたき</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- スタート画面 -->
+<div id="startScreen" class="screen">
+  <h1>モグラたたき</h1>
+  <p id="greetingText"></p>
+  <p id="todayText"></p>
+  <p>さあ、モグラを叩きましょう（3分間）</p>
+  <button onclick="startGame()">スタート</button>
+</div>
+
+<!-- ゲーム画面 -->
+<div id="gameScreen" class="screen hidden">
+  <div id="board"></div>
+
+  <div id="bottomBar">
+    残り時間：<span id="time">180</span> 秒
+  </div>
+
+  <audio id="hitSound" src="hit.mp3"></audio>
+</div>
+
+<!-- 結果画面 -->
+<div id="resultScreen" class="screen hidden">
+  <h1>結果</h1>
+  <p><span id="resultScore">0</span> 匹たたきました</p>
+  <p>お疲れ様です！</p>
+  <button onclick="location.reload()">もう一度</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
