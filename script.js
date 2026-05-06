@@ -91,24 +91,34 @@ function initGame() {
     mole.src = "mole.png";
     mole.className = "mole";
 
-    mole.onclick = () => {
-      if (!active) return;
+ // ★ 共通処理
+  function hitMole() {
+    if (!active) return;
 
-      score++;
+    score++;
 
-      hitSound.currentTime = 0;
-      hitSound.play();
+    hitSound.currentTime = 0;
+    hitSound.play();
 
-      mole.remove();
-      mole = null;
+    mole.remove();
+    mole = null;
 
-      setTimeout(() => {
-        spawnMole();
-      }, 2000);
-    };
-
-    holes[index].appendChild(mole);
+    setTimeout(() => {
+      spawnMole();
+    }, 500);
   }
+
+  // ★ PC
+  mole.onclick = hitMole;
+
+  // ★ タブレット・スマホ
+  mole.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    hitMole();
+  });
+
+  holes[index].appendChild(mole);
+}
 
   // 終了
   function endGame() {
