@@ -105,7 +105,7 @@ function initGame() {
 
     setTimeout(() => {
       spawnMole();
-    }, 500);
+    }, 2000);
   }
 
   // ★ PC
