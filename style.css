@@ -151,3 +151,10 @@ body {
   transform: translateY(3px);
   box-shadow: 0 1px 0 #b36b00;
 }
+
+/* タブレット長押し対策 */
+.mole {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
