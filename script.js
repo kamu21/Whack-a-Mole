@@ -2,6 +2,9 @@ window.onload = () => {
   setToday();
   setGreeting();
 
+  // ★ここに追加
+  document.addEventListener("contextmenu", e => e.preventDefault());
+
   initGame();
 };
 
