@@ -101,7 +101,7 @@ body {
 /* タイトル */
 #startScreen h1,
 #resultScreen h1 {
-  font-size: 44px;
+  font-size: 33px;
   color: #3b2412;
   margin-bottom: 10px;
 }
@@ -117,7 +117,7 @@ body {
 /* 説明文 */
 #startScreen p,
 #resultScreen p {
-  font-size: 18px;
+  font-size: 33px;
   color: #6b4a2a;
   margin: 10px 0;
 }
