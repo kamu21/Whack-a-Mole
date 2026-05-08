@@ -47,6 +47,7 @@ function initGame() {
   const timeEl = document.getElementById("time");
   const resultScore = document.getElementById("resultScore");
   const hitSound = document.getElementById("hitSound");
+  const resultSound = document.getElementById("resultSound");
 
   let score = 0;
   let time = 180;
@@ -131,5 +132,8 @@ function initGame() {
     document.getElementById("resultScreen").classList.remove("hidden");
 
     resultScore.textContent = score;
+
+    resultSound.currentTime = 0;
+    resultSound.play();
   }
 }
