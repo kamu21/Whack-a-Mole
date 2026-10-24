@@ -137,3 +137,16 @@ function initGame() {
     resultSound.play();
   }
 }
+
+// Androidタブレット用 全画面表示
+function startFullscreen() {
+  const el = document.documentElement;
+
+  if (el.requestFullscreen) {
+    el.requestFullscreen().catch(err => {
+      console.log("全画面表示にできませんでした", err);
+    });
+  } else if (el.webkitRequestFullscreen) {
+    el.webkitRequestFullscreen();
+  }
+}
