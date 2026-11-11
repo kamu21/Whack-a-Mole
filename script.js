@@ -138,15 +138,26 @@ function initGame() {
   }
 }
 
-// Androidタブレット用 全画面表示
-function startFullscreen() {
+// 全画面表示・解除の切り替え
+async function toggleFullscreen() {
   const el = document.documentElement;
 
-  if (el.requestFullscreen) {
-    el.requestFullscreen().catch(err => {
-      console.log("全画面表示にできませんでした", err);
-    });
-  } else if (el.webkitRequestFullscreen) {
-    el.webkitRequestFullscreen();
+  if (!document.fullscreenElement) {
+    if (el.requestFullscreen) {
+      await el.requestFullscreen();
+    }
+  } else {
+    await document.exitFullscreen();
   }
 }
+
+// ボタンの表示を自動変更
+document.addEventListener("fullscreenchange", () => {
+  const btn = document.getElementById("fullscreenBtn");
+
+  if (document.fullscreenElement) {
+    btn.textContent = "⛶ 解除";
+  } else {
+    btn.textContent = "⛶ 全画面";
+  }
+});
