@@ -158,3 +158,28 @@ body {
   -webkit-touch-callout: none;
   user-select: none;
 }
+
+/* 全画面ボタン専用・最優先設定 */
+#fullscreenBtn {
+  position: fixed !important;
+  top: 8px !important;
+  right: 8px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  padding: 2px 5px !important;
+  margin: 0 !important;
+
+  font-size: 10px !important;
+  font-weight: normal !important;
+
+  background: #f3e7c9 !important;
+  color: #8b7355 !important;
+
+  border: none !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+
+  cursor: pointer;
+}
